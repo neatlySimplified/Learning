@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <style>
+        tr {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body class="bg-light bg-gradient">
+    <button class="z-3 btn btn-outline-dark m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
+        <i class="fas fa-bars"></i>
+    </button>  
+    <aside class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close d-block" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div id="user">
+                <img class="rounded-4 mx-auto d-block" src="./depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.png" style="width: 100px; height: 100px">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="">
+                            <a class="btn fs-5 w-100 text-start" data-bs-toggle="collapse" href="#collapse-user" role="button" aria-expanded="false" aria-controls="collapse-user">
+                                Username
+                            </a>
+                        </div>
+                        <div class="collapse" id="collapse-user">
+                            <!-- Some borders are removed -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item btn btn-outline-light">Profile</li>
+                                <li class="list-group-item btn btn-outline-light">Change Password</li>
+                                <li class="list-group-item btn btn-outline-light">Quit</li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="">
+                            <a class="btn fs-5 w-100 text-start" data-bs-toggle="collapse" href="#collapse-client" role="button" aria-expanded="false" aria-controls="collapse-client">
+                                Clientes
+                            </a>
+                        </div>
+                        <div class="collapse" id="collapse-client">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item btn btn-outline-light">Pessoa Física</li>
+                                <li class="list-group-item btn btn-outline-light">Pessoa Jurídica</li>
+                                <li class="list-group-item btn btn-outline-light">Todos</li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="">
+                            <a class="btn fs-5 w-100 text-start" data-bs-toggle="collapse" href="#collapse-service" role="button" aria-expanded="false" aria-controls="collapse-service">
+                                Serviços
+                            </a>
+                        </div>
+                        <div class="collapse" id="collapse-service">
+                            <!-- Some borders are removed -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item btn btn-outline-light">Processos</li>
+                                <li class="list-group-item btn btn-outline-light">Consultoria</li>
+                                <li class="list-group-item btn btn-outline-light">Add Template</li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class=" ">
+                            <a class="btn fs-5 w-100 text-start" data-bs-toggle="collapse" href="#collapse-transaction" role="button" aria-expanded="false" aria-controls="collapse-transaction">
+                                Transações
+                            </a>
+                        </div>
+                        <div class="collapse" id="collapse-transaction">
+                            <!-- Some borders are removed -->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item btn btn-outline-light">Entrada</li>
+                                <li class="list-group-item btn btn-outline-light">Saída</li>
+                                <li class="list-group-item btn btn-outline-light">Transferencia</li>
+                                <li class="list-group-item btn btn-outline-light">Todos</li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="">
+                            <a class="btn fs-5 w-100 text-start" role="button">
+                                Agenda
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </aside>
+    
+    <main class="container-fluid">
+
+        <div class="row justify-content-around row-gap-2">
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-success-subtle bg-opacity-50 h-100">
+                    <a href="" class="btn">
+                        <div class="card-body d-flex d-md-block justify-content-between text-md-center">
+                            <h4 class="card-title mt-1">Serviços Ativos</h4>
+                            <p class="card-text display-5">19</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-warning-subtle bg-opacity-50 h-100">
+                    <a href="" class="btn">
+                        <div class="card-body d-flex d-md-block justify-content-between text-md-center">
+                            <h4 class="card-title">Cliente PF</h4>
+                            <p class="card-text display-5">3</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-primary-subtle bg-opacity-50 h-100">
+                    <a href="" class="btn">
+                        <div class="card-body d-flex d-md-block justify-content-between text-md-center">
+                            <h4 class="card-title">Cliente PJ</h4>
+                            <p class="card-text display-5">8</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div><hr></div>
+
+        <div class="row row-gap-2 justify-content-around">
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-success-subtle bg-opacity-75 h-100">
+                    <a href="" class="btn">
+                        <div class="card-body">
+                            <div class="d-flex flex-row flex-md-column align-content-center justify-content-around text-md-center">
+                                <h4 class="card-title mt-1">Entrada</h4>
+                                <div class="card-text fs-4"><span id="efetivado">R$ 120</span>/<span id="total">1700</span></div>
+                            </div>
+                            <div class="d-flex flex-column my-1">
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 7%">7%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-danger-subtle bg-opacity-50 h-100">
+                    <a href="" class="btn">
+                        <div class="card-body">
+                            <div class="d-flex flex-row flex-md-column align-content-center justify-content-around text-md-center">
+                                <h4 class="card-title mt-1">Saída</h4>
+                                <div class="card-text fs-4"><span id="efetivado">R$ 120</span>/<span id="total">700</span></div>
+                            </div>
+                            <div class="d-flex flex-column my-1">
+                                <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 16%">16%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card bg-warning-subtle bg-opacity-50 h-100">
+                    <a href="" class="btn">
+                        <div class="d-flex flex-row flex-md-column align-content-center justify-content-around text-md-center">
+                            <h4 class="card-title mt-1">Saldo</h4>
+                            <div class="card-text fs-3"><span id="efetivado">R$ 380</span></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div><hr></div>
+
+        <div class="row">
+            <div>
+                <a href="#collapse-events-soon" class="btn fs-5 w-100 bg-dark-subtle" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-events-soon"> Eventos nos Próximos 7 dias</a>
+            </div>
+            <div class="collapse" id="collapse-events-soon">
+                <table class="table overflow-y-auto table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Efetivo</th>
+                            <th scope="col">Origem</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                            <td>Entrada</td>
+                            <td>Cliente</td>
+                            <td>12/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                            <td>Processo</td>
+                            <td>Processo</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='http://127.0.0.1:5500/index.html#staticBackdrop'">&#128308;</th>
+                            <td>Entrada</td>
+                            <td>Cliente</td>
+                            <td>12/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                            <td>Processo</td>
+                            <td>Processo</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128994;</th>
+                            <td>Entrada</td>
+                            <td>Cliente</td>
+                            <td>12/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128994;</th>
+                            <td>Processo</td>
+                            <td>Processo</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div><hr></div>
+
+        <div class="row">
+            <div>
+                <a href="#collapse-events-later" class="btn fs-5 w-100 bg-dark-subtle" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-events-later"> Eventos até o final do Mês</a>
+            </div>
+            <div class="collapse" id="collapse-events-later">
+                <table class="table overflow-y-auto table-hover">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Efetivo</th>
+                            <th scope="col">Origem</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                            <td>Entrada</td>
+                            <td>Cliente</td>
+                            <td>12/07/2024</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                            <td>Processo</td>
+                            <td>Processo</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                            <td>Entrada</td>
+                            <td>Cliente</td>
+                            <td>12/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                            <td>Cliente</td>
+                            <td>Aniversário</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128994;</th>
+                            <td>Cliente</td>
+                            <td>Consulta</td>
+                            <td>12/07/2024</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" onclick="window.location='https://example.com/user3'">&#128994;</th>
+                            <td>Processo</td>
+                            <td>Processo</td>
+                            <td>17/07/2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    
+    <!--Cliente PF Modal-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="Dados">
+                        <h3>Dados</h3>
+                        <div class="row row-gap-3 text-center">
+                            
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nome:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">E-mail:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">CPF</h4>
+                                        <hr>
+                                        <p class="card-text">132.325.214-45</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Sexo:</h4>
+                                        <hr>
+                                        <p class="card-text">Masculino</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Estádo Cívil</h4>
+                                        <hr>
+                                        <p class="card-text">Viúvo</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nascimento:</h4>
+                                        <hr>
+                                        <p class="card-text">12/02/1998</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">PIS:</h4>
+                                        <hr>
+                                        <p class="card-text">13542445425</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">RG:</h4>
+                                        <hr>
+                                        <p class="card-text">13542445425</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">CTPS:</h4>
+                                        <hr>
+                                        <p class="card-text">13542445425</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Série:</h4>
+                                        <hr>
+                                        <p class="card-text">13542445425</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Profissão:</h4>
+                                        <hr>
+                                        <p class="card-text">Desempregado</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nacionalidade:</h4>
+                                        <hr>
+                                        <p class="card-text">Itaboraí - RJ</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><hr></p>
+    
+                    <div id="Endereços">
+                        <h3>Endereços:</h3>
+                        <div class="row row-gap-2 text-center">
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap"> Nome da Rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap"> Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Trabalho:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap"> Nome da Rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap"> Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Trabalho 2:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap">Nome da rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap">Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <p><hr></p>
+                    <div id="Telefones">
+                        <h3>Telefones:</h3>
+                        <div class="row row-gap-2 d-flex flex-md-row flex-sm-column text-center">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 9 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Marcia carmino</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap">Esposa do cliente. Ligas das 12h às 17h</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 9 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Cliente</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap">Ligas das 12h às 13h ou nos finais de semana</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Telefone Fixo</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Cliente</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap"></p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p><hr></p>
+    
+                    <div id="Detalhes">
+                        <div class="row row-gap-2 justify-content-center">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Detalhes do Cliente:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <p class="text-wrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui eaque atque nesciunt maxime quia harum natus repellendus est accusantium iusto molestiae voluptatem quisquam asperiores similique quaerat fugit, iure tempore?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p><hr></p>
+    
+                    <div class="row row-gap-2 justify-content-center">
+                        <div class="col-10">
+                            <div class="w-100">
+                                <button type="button" class="btn btn-outline-dark w-100">Serviço Contratado pelo Cliente</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Cliente PJ Modal-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Jurídica</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="Dados">
+                        <h3>Dados</h3>
+                        <div class="row row-gap-3 text-center">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nome:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">E-mail:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">CPF</h4>
+                                        <hr>
+                                        <p class="card-text">132.325.214-45</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Sexo:</h4>
+                                        <hr>
+                                        <p class="card-text">Masculino</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Estádo Cívil</h4>
+                                        <hr>
+                                        <p class="card-text">Viúvo</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nascimento:</h4>
+                                        <hr>
+                                        <p class="card-text">12/02/1998</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">CNPJ:</h4>
+                                        <hr>
+                                        <p class="card-text">13542445425</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Responsavel:</h4>
+                                        <hr>
+                                        <p class="card-text">Maria Dos Santos Aparecida</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tipo de Empresa:</h4>
+                                        <hr>
+                                        <p class="card-text">Venda de Artigos Esportivos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Atividade Principal:</h4>
+                                        <hr>
+                                        <p class="card-text">Venda de artigos esportivos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Inscrição Municipal:</h4>
+                                        <hr>
+                                        <p class="card-text">34567887654</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Inscrição Estadual:</h4>
+                                        <hr>
+                                        <p class="card-text">34567898765</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><hr></p>
+    
+                    <div id="Endereços">
+                        <h3>Endereços:</h3>
+                        <div class="row row-gap-2 text-center">
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap"> Nome da Rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap"> Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Trabalho:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap"> Nome da Rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap"> Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Trabalho 2:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p class="text-wrap">Nome da rua</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <hr>
+                                            <h4>Complemento:</h4>
+                                            <p class="text-wrap">Complemento</p>
+                                            <hr>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <hr>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <hr>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <hr>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+    
+                    <p><hr></p>
+                    <div id="Telefones">
+                        <h3>Telefones:</h3>
+                        <div class="row row-gap-2 text-center">
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 9 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Marcia carmino</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap">Esposa do cliente. Ligas das 12h às 17h</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 9 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Cliente</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap">Ligas das 12h às 13h ou nos finais de semana</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4 col-12">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Casa:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Telefone Fixo</p>
+                                            <hr>
+                                            <h4>Número:</h4>
+                                            <p>31 6166-3241</p>
+                                            <hr>
+                                            <h4>Contato:</h4>
+                                            <p>Cliente</p>
+                                            <hr>
+                                            <h4>Detalhes:</h4>
+                                            <p class="text-wrap"></p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p><hr></p>
+    
+                    <div id="Detalhes">
+                        <div class="row row-gap-2 justify-content-center">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Detalhes do Cliente:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <p class="text-wrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui eaque atque nesciunt maxime quia harum natus repellendus est accusantium iusto molestiae voluptatem quisquam asperiores similique quaerat fugit, iure tempore?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p><hr></p>
+    
+                    <div class="row row-gap-2 justify-content-center">
+                        <div class="col-10">
+                            <div class="w-100">
+                                <button type="button" class="btn btn-outline-dark w-100">Serviço Contratado pelo Cliente</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Service Modal-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="false">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Processo</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="Dados">
+                        <h3>Dados</h3>
+                        <div class="row row-gap-3 text-center">
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Nome do Cliente:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">E-mail:</h4>
+                                        <hr>
+                                        <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">ID:</h4>
+                                        <hr>
+                                        <p class="card-text">235465787675342312</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Valor Acordado</h4>
+                                        <hr>
+                                        <p class="card-text">R$ 13231,34</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Status:</h4>
+                                        <hr>
+                                        <p class="card-text">Em Andamento</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Categoria</h4>
+                                        <hr>
+                                        <p class="card-text">Família</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Advogado da Outra Parte:</h4>
+                                        <hr>
+                                        <p class="card-text">Nome comum de advogado</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Outra parte:</h4>
+                                        <hr>
+                                        <p class="card-text">Nome da outra parte</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Tipo de Empresa:</h4>
+                                        <hr>
+                                        <p class="card-text">Venda de Artigos Esportivos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Atividade Principal:</h4>
+                                        <hr>
+                                        <p class="card-text">Venda de artigos esportivos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Inscrição Municipal:</h4>
+                                        <hr>
+                                        <p class="card-text">34567887654</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4">
+                                <div class="card  h-100">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Inscrição Estadual:</h4>
+                                        <hr>
+                                        <p class="card-text">34567898765</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><hr></p>
+                    <div id="Eventos">
+                        <div>
+                            <a href="#collapse-events-later" class="btn fs-5 w-100 btn-outline-dark" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-events-later"> Eventos</a>
+                        </div>
+                        <div class="collapse" id="collapse-events-later">
+                            <div class="d-flex justify-content-around">
+                                <button
+                                    type="button"
+                                    class="btn btn-lg btn-outline-dark"
+                                >
+                                    <i class="fas fa-step-backward"></i>
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-lg btn-outline-dark"
+                                >
+                                    <i class="fas fa-step-forward"></i>
+                                </button>
+                                
+                            </div>
+                            <table class="table overflow-y-auto table-hover">
+            
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Efetivo</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Data</th>
+                                    </tr>
+                                </thead>
+            
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                                        <td>Aniverário do Cliente</td>
+                                        <td>12/07/2024</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                                        <td>Audiencia</td>
+                                        <td>17/07/2024</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                                        <td>Data limite para Processo</td>
+                                        <td>12/07/2024</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><hr></p>
+                    <div id="transacao">
+                        <div>
+                            <a href="#collapse-transacao" class="btn fs-5 w-100 btn-outline-dark" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-transacao">Transações</a>
+                        </div>
+                        <div class="collapse" id="collapse-transacao">
+                            <table class="table overflow-y-auto table-hover">
+            
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Efetivo</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Valor</th>
+                                    </tr>
+                                </thead>
+            
+                                <tbody>
+            
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                                        <td>Entrada</td>
+                                        <td>Pagamento</td>
+                                        <td>12/07/2024</td>
+                                        <td>R$ 12230</td>
+                                    </tr>
+            
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128993;</th>
+                                        <td>Transferencia</td>
+                                        <td>Do Cliente</td>
+                                        <td>17/07/2024</td>
+                                        <td>R$ 7000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                                        <td>Saída</td>
+                                        <td>INSS</td>
+                                        <td>12/07/2024</td>
+                                        <td>R$ 100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><hr></p>
+                    <div id="Detalhes">
+                        <div class="row row-gap-2 justify-content-center">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Detalhes do Processo:</h4> 
+                                        <hr>
+                                        <div class="card-text">
+                                            <p class="text-wrap">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti qui eaque atque nesciunt maxime quia harum natus repellendus est accusantium iusto molestiae voluptatem quisquam asperiores similique quaerat fugit, iure tempore?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <p><hr></p>
+    
+                    <div class="row row-gap-2 justify-content-center">
+                        <div class="col-10">
+                            <div class="w-100">
+                                <button type="button" class="btn btn-outline-dark w-100">O Cliente</button>
+                            </div>
+                        </div>
+                    </div>
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Transaction Modal-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2 text-center">
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Conta de Luz</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Tipo:</h4>
+                                    <p class="card-text text-wrap">Saída</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Valor</h4>
+                                    <p class="card-text">R$ 300</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Parcelas:</h4>
+                                    <p class="card-text">1</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Peridiocidade</h4>
+                                    <p class="card-text">Fixa Mensal</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Efetivado:</h4>
+                                    <p class="card-text">Não</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Conta:</h4>
+                                    <p class="card-text">Itau C/C final 23</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p><hr></p>
+                    <div id="transacao">
+                        <div>
+                            <a href="#collapse-transacao" class="btn fs-5 w-100 btn-outline-dark" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapse-transacao">Pagamento</a>
+                        </div>
+                        <div class="collapse" id="collapse-transacao">
+                            <table class="table overflow-y-auto table-hover">
+            
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Efetivo</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Nome</th>
+                                        <th scope="col">Data</th>
+                                        <th scope="col">Valor</th>
+                                    </tr>
+                                </thead>
+            
+                                <tbody>
+            
+                                    <tr>
+                                        <th scope="row" onclick="window.location='https://example.com/user3'">&#128308;</th>
+                                        <td>Unico</td>
+                                        <td>Conta de Luz</td>
+                                        <td>12/07/2024</td>
+                                        <td>R$ 300</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <p><hr></p>
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Event Modal-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-fullscreen-md-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2 text-center">
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Aniversário do Cliente</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Status:</h4>
+                                    <p class="card-text text-wrap">Efetivado</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Vencimento</h4>
+                                    <p class="card-text">12/03/2024</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Começo:</h4>
+                                    <p class="card-text">12/03/2024</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Peridiocidade</h4>
+                                    <p class="card-text">Anual</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Criador:</h4>
+                                    <p class="card-text">
+                                        <button
+                                            type="button"
+                                            class="btn btn-outline-dark"
+                                        >
+                                            Cliente de Origem
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <p><hr></p>
+                        <div class="col-12">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Detalhes:</h4>
+                                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit laudantium doloremque ipsam ratione at pariatur animi nulla quaerat aperiam consectetur consequuntur corrupti veniam ipsa unde saepe, voluptatibus amet, facilis magni?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Client PF Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Client PJ Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Service Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Transaction Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Event Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Service Template Modal Form-->
+    <article>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Pessoa Física</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row row-gap-2">
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nome:</h4>
+                                    <p class="card-text text-wrap">Marcelo Dos Santos Vagin</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-12 col-sm-6 col-md-4">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">E-mail:</h4>
+                                    <p class="card-text text-wrap">ribeirodennis@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CPF</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">PIS:</h4>
+                                    <p class="card-text">13542445425</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">CTPS</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Serie:</h4>
+                                    <p class="card-text">132.325.214-45</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Natural de:</h4>
+                                    <p class="card-text">Itaboraí / RJ</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Sexo:</h4>
+                                    <p class="card-text">Masculino</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Estado Cível:</h4>
+                                    <p class="card-text">Viúvo</p>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col-6 col-md-4 col-xl-2">
+                            <div class="card  h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">Nascimento:</h4>
+                                    <p class="card-text">12/03/1970</p>
+                                </div>
+                            </div>
+                        </div>
+                    <p><hr></p>
+    
+    
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Endereços:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 1</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Endereço 2</h4>
+                                        <div class="card-text">
+                                            <h4>Rua:</h4>
+                                            <p>Nome da rua</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Complemento:</h4>
+                                            <p>Complemento</p>
+                                            <h4>CEP:</h4>
+                                            <p>353241253</p>
+                                            <h4>Bairro:</h4>
+                                            <p>Nome do Bairro</p>
+                                            <h4>Cidade:</h4>
+                                            <p>Nome da Cidade</p>
+                                            <h4>Estado:</h4>
+                                            <p>Nome do Estado</p>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card  h-100">
+                            <div class="card-body">
+                                <h4 class="card-title">Telefone:</h4>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 1</h4>
+                                        <div class="card-text">
+                                            <div class="d-flex flex-column justify-content-evenly"></div>
+                                            <div>
+                                                <h4>Tipo:</h4>
+                                                <p>Celular</p>
+                                            </div>
+                                            <div>
+                                                <h4>Número:</h4>
+                                                <p>Número</p>
+                                            </div>
+                                            <div>
+                                                <h4>Contáto:</h4>
+                                                <p class="text-wrap">Nome do Contato</p>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <div>
+                                                    <h4>Detalhes:</h4>
+                                                    <p class="text-wrap">Detalhes</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title">Número 2</h4>
+                                        <div class="card-text">
+                                            <h4>Tipo:</h4>
+                                            <p>Celular</p>
+                                            <h4>Número:</h4>
+                                            <p>Número</p>
+                                            <h4>Contáto:</h4>
+                                            <p>Nome do Contato</p>
+                                            <h4>Detalhes:</h4>
+                                            <p>Detalhes</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+    
+                </div>
+                <div class="modal-footer d-flex justify-content-evenly">
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                    <button type="button" class="btn btn-primary">Editar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </article>
+
+    <!--Bootstrap JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!--Font Awesome JS-->
+    <script src="https://kit.fontawesome.com/3f86b0abf8.js" crossorigin="anonymous"></script>
+    
+</body>
+</html>
